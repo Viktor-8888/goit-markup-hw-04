@@ -59,6 +59,8 @@ button {
 /* #region  Header*/
 .page-header {
   border-bottom: 1px solid #e7e9fc;
+  box-shadow: 0 1px 6px 0 rgba(46, 47, 66, 0.08),
+    0 1px 1px 0 rgba(46, 47, 66, 0.16), 0 2px 1px 0 rgba(46, 47, 66, 0.08);
 }
 .header-container {
   display: flex;
@@ -98,10 +100,25 @@ button {
   letter-spacing: 0.02em;
   padding: 24px 0;
   display: block;
+  transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 .nav-link:hover,
-.nav-link:focus {
+.nav-link:focus,
+.nav-link.active {
   color: #404bbf;
+}
+.nav-link.active {
+  position: relative;
+}
+.nav-link.active::after {
+  content: "";
+  width: 100%;
+  position: absolute;
+  left: 0;
+  bottom: -1px;
+  height: 4px;
+  background-color: #404bbf;
+  border-radius: 2px;
 }
 .contacts {
   margin-left: auto;
@@ -119,6 +136,7 @@ button {
   color: #434455;
   line-height: 1.5;
   letter-spacing: 0.02em;
+  transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 .contacts-link:hover,
 .contacts-link:focus {
@@ -128,8 +146,18 @@ button {
 
 /* #region Solution */
 .solution {
-  background: #2e2f42;
+  background-color: #2e2f42;
   padding: 188px 0;
+  background-image: linear-gradient(
+      rgba(46, 47, 66, 0.7),
+      rgba(46, 47, 66, 0.7)
+    ),
+    url(../images/people-office-one.jpg);
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  max-width: 1440px;
+  margin: 0 auto;
 }
 .solution-title {
   color: #fff;
@@ -172,6 +200,22 @@ button {
 }
 .approache-item {
   flex-basis: calc((100% - 72px) / 4);
+  /* border: 1px solid #8e8f99;
+  border-radius: 4px;
+  width: 264px;
+  height: 112px;
+  background-color: #f4f4fd; */
+}
+.approache-icon {
+  border: 1px solid #8e8f99;
+  border-radius: 4px;
+  width: 264px;
+  height: 112px;
+  background-color: #f4f4fd;
+  padding: 24px 100px;
+  margin-bottom: 8px;
+}
+.approache-icon-svg {
 }
 .approache-subtitle {
   color: #2e2f42;
@@ -218,6 +262,20 @@ button {
 .team-holder {
   padding: 32px 0px;
 }
+.team-holder-list {
+  display: flex;
+  gap: 24px;
+  justify-content: center;
+}
+.team-holder-item {
+  width: 40px;
+  height: 40px;
+  background-color: #4d5ae5;
+  border-radius: 50%;
+  padding: 12px 12px;
+}
+.team-holder-icon-svg {
+}
 .team-subtitle {
   color: #2e2f42;
   font-weight: 500;
@@ -231,6 +289,7 @@ button {
   line-height: 1.5;
   letter-spacing: 0.02em;
   text-align: center;
+  margin-bottom: 8px;
 }
 
 /* #endregion */
