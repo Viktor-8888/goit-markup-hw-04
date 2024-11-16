@@ -182,6 +182,7 @@ button {
   padding: 16px 32px;
   border: none;
   min-width: 169px;
+  transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 .solution-button:hover,
 .solution-button:focus {
@@ -200,19 +201,17 @@ button {
 }
 .approache-item {
   flex-basis: calc((100% - 72px) / 4);
-  /* border: 1px solid #8e8f99;
-  border-radius: 4px;
-  width: 264px;
-  height: 112px;
-  background-color: #f4f4fd; */
 }
 .approache-icon {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
   border: 1px solid #8e8f99;
   border-radius: 4px;
   width: 264px;
   height: 112px;
   background-color: #f4f4fd;
-  padding: 24px 100px;
   margin-bottom: 8px;
 }
 .approache-icon-svg {
@@ -268,13 +267,23 @@ button {
   justify-content: center;
 }
 .team-holder-item {
+}
+.icon-link {
+  display: flex;
+  justify-content: center;
+  align-items: center;
   width: 40px;
   height: 40px;
   background-color: #4d5ae5;
   border-radius: 50%;
-  padding: 12px 12px;
+  transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+.icon-link:hover,
+.icon-link:focus {
+  background-color: #404bbf;
 }
 .team-holder-icon-svg {
+  fill: #ffffff;
 }
 .team-subtitle {
   color: #2e2f42;
@@ -314,6 +323,34 @@ button {
 }
 .portfolio-item {
 }
+.portfolio-item:hover,
+.portfolio-item:focus {
+  box-shadow: 0 2px 1px 0 rgba(46, 47, 66, 0.08),
+    0 1px 1px 0 rgba(46, 47, 66, 0.16), 0 1px 6px 0 rgba(46, 47, 66, 0.08);
+}
+.portfolio-item:hover .portfolio-overlay {
+  transform: translateY(0);
+}
+.portfolio-illustration {
+  position: relative;
+  overflow: hidden;
+}
+.portfolio-overlay {
+  line-height: 150%;
+  letter-spacing: 0.02em;
+  color: #d9d9d9;
+  background-color: #4d5ae5;
+  text-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  padding: 40px 32px;
+  transform: translateY(100%);
+  transition: 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  transition-property: transform, box-shadow;
+}
 .portfolio-img {
   max-width: 360px;
 }
@@ -345,6 +382,10 @@ button {
   padding: 100px 0;
 }
 .footer-container {
+  display: flex;
+  gap: 120px;
+}
+.footer-wrapper {
 }
 .footer-logo {
   display: inline-block;
@@ -360,5 +401,28 @@ button {
   line-height: 1.5;
   letter-spacing: 0.02em;
   max-width: 264px;
+}
+.social-media {
+}
+.social-text {
+  margin-bottom: 16px;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 150%;
+  letter-spacing: 0.02em;
+  color: #ffffff;
+}
+.footer-social {
+  display: flex;
+  gap: 16px;
+}
+.footer-icon {
+}
+.icon-link.footer-icon-link:hover,
+.icon-link.footer-icon-link:focus {
+  background-color: #31d0aa;
+}
+.footer-icon-svg {
+  fill: #ffffff;
 }
 /* #endregion */
